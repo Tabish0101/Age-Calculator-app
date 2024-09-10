@@ -1,130 +1,102 @@
-# Age Calculator App
+# Frontend Mentor - Age calculator app
 
-This is a solution to the Age Calculator App challenge on Frontend Mentor. The objective is to create a simple web app that takes a user's date of birth and calculates their age in years, months, and days. This challenge allows you to practice form validation, date calculation, and responsive design.
+![Design preview for the Age calculator app coding challenge](./design/desktop-preview.jpg)
 
-## Table of Contents
-- [Overview](#overview)
-- [The Challenge](#the-challenge)
-- [Try These](#try-these)
-- [Links](#links)
-- [My Process](#my-process)
-- [Built With](#built-with)
-- [What I Learned](#what-i-learned)
-- [Useful Resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+## Welcome! 👋
 
-## Overview
-### The Challenge
-Users should be able to:
-- Input their date of birth and view their exact age in years, months, and days.
+Thanks for checking out this front-end coding challenge.
+
+[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+
+**To do this challenge, you need a decent understanding of HTML, CSS and JavaScript.**
+
+## The challenge
+
+Your challenge is to build out this age calculator app and get it looking as close to the design as possible.
+
+You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+
+Your users should be able to: 
+
+- View an age in years, months, and days after submitting a valid date through the form
 - Receive validation errors if:
-    - Any input field is empty when the form is submitted.
-    - The day number is not between 1-31.
-    - The month number is not between 1-12.
-    - The year is in the future.
-    - The date is invalid (e.g., 31st of April).
-- View the responsive layout based on the screen size.
-- **Bonus**: Age numbers animate to their final count when the form is submitted.
+  - Any field is empty when the form is submitted
+  - The day number is not between 1-31
+  - The month number is not between 1-12
+  - The date is in the future
+  - The date is invalid e.g. 31/04/1991 (there are 30 days in April)
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
+- **Bonus**: See the age numbers animate to their final number when the form is submitted
 
-## Try these (Test Cases)
-Here are the test cases covered by the program:
+Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
 
-1. **Day greater than 31 or Month greater than 12**:
-    - Input: Day = 32, Month = 13, Year = 2023
-    - Expected Output: Error message indicating invalid day or month.
+## Where to find everything
 
-2. **Day 31 for months with 30 or fewer days**:
-    - Input: Day = 31, Month = 4, Year = 2023
-    - Expected Output: Error message indicating the month has only 30 days.
+Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
 
-3. **Day 29 or greater for February (non-leap year) and Day 30 for February (leap year)**:
-    - Input: Day = 30, Month = 2, Year = 2023
-    - Expected Output: Error message indicating February has only 28 days in non-leap years.
-    - Input: Day = 30, Month = 2, Year = 2024
-    - Expected Output: Error message indicating February of leap year has only 29 days.
+The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
 
-4. **Year in the future**:
-    - Input: Day = 15, Month = 8, Year = 2025
-    - Expected Output: Error message indicating year cannot be in the future.
+If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
 
-5. **Future month of the current year**:
-    - Input: Day = 10, Month = 12, Year = Current Year (e.g., 2023, if current month is 9)
-    - Expected Output: Error message indicating month cannot be in the future.
+All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
 
-6. **Future day of the current year and month**:
-    - Input: Day = 30, Month = Current Month, Year = Current Year (if today is 15th)
-    - Expected Output: Error message indicating day cannot be in the future.
+We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
 
-7. **Decimal, alphanumeric, or special characters**:
-    - Input: Day = 12.5, Month = '@', Year = '202X'
-    - Expected Output: Error message indicating invalid characters.
+There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
 
-8. **Zero for Day, Month, and Year**:
-    - Input: Day = 0, Month = 0, Year = 0
-    - Expected Output: Error message indicating day, month, and year cannot be zero.
+## Building your project
 
-9. **Empty input for any field**:
-    - Input: Day = '', Month = '', Year = ''
-    - Expected Output: Error message indicating no fields can be left empty.
+Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
 
+1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
+2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
+3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
+4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
+5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
+6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
 
-# Age-Calculator-app
-## Features
-- Validates day, month, and year inputs.
-- Checks for leap years and ensures February has the correct number of days.
-- Prevents future dates from being entered.
-- Handles invalid characters and empty inputs.
-- Provides error messages for various invalid input scenarios.
+## Deploying your project
 
-## Validations
-The following validations are included in the program:
+As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
 
-- **Month Validation**: Ensures the month entered is between 1 and 12.
-- **Day Validation**: Ensures the day is appropriate for the given month.
-- **February Validation**: Handles leap years correctly by ensuring February has 29 days in leap years and 28 days otherwise.
-- **Future Year Validation**: Prevents future years from being entered.
-- **Current Year Month Validation**: Prevents future months of the current year from being entered.
-- **Current Year and Month Day Validation**: Prevents future days of the current month and year from being entered.
-- **Character Validation**: Prevents the use of decimals, alphanumeric, or special characters in the date fields.
-- **Zero Validation**: Ensures the day, month, and year values cannot be zero.
-- **Empty Input Validation**: Ensures none of the inputs are left empty.
+- [GitHub Pages](https://pages.github.com/)
+- [Vercel](https://vercel.com/)
+- [Netlify](https://www.netlify.com/)
 
+You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
 
-## Links
-- Solution URL: [Solution URL](https://github.com/Tabish0101/Age-Calculator-app)
-- Live Site URL: [Age Calculator App URL](https://age-calculator-tabishjeelani.netlify.app/)
+## Create a custom `README.md`
 
-## My Process
-### Built With
-- Semantic HTML5
-- CSS (Flexbox, Grid, custom properties)
-- JavaScript
-- Mobile-first design
+We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
 
-## What I Learned
-In this project, I learned how to handle real-time form validation, live error display, and calculations for date differences using JavaScript. The biggest takeaway was ensuring form fields only accept valid input and calculating leap years to handle February correctly. 
+The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
 
-## Useful resources
+Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
 
-- **MDN Web Docs** - Helped with understanding the Date object and calculating age from input values.
-- **CSS Tricks** - Provided great insight into responsive design and layout techniques using Flexbox and Grid.
-- **Kevin Paul** - YouTube channel for CSS.
+## Submitting your solution
 
-## Author
+Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
 
-- **GitHub** - [Tabish Jeelani](https://github.com/Tabish0101)
-- **Frontend Mentor** - [@Tabish0101](https://www.frontendmentor.io/profile/Tabish0101)
+Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
 
-## Acknowledgments
+## Sharing your solution
 
-Special thanks to the Frontend Mentor community for providing such interesting and practical challenges! This project helped me reinforce my knowledge in JavaScript and form handling.
+There are multiple places you can share your solution:
 
+1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
+2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
+3. Share your solution on other social channels like LinkedIn.
+4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
 
-## How to Run
-1. Clone the repository.
-2. Open the `index.html` file in any browser.
-3. Enter a date and click the "Validate" button to check the validity of the entered date.
-4. Based on the input, the program will display either a success or an error message.
+We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
 
----
+The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+
+## Got feedback for us?
+
+We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+
+This challenge is completely free. Please share it with anyone who will find it useful for practice.
+
+**Have fun building!** 🚀
